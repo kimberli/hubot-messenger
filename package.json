@@ -1,0 +1,23 @@
+{
+  "name": "hubot-messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/messenger.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimberli/hubot-messenger.git"
+  },
+  "author": "kimberli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimberli/hubot-messenger/issues"
+  },
+  "homepage": "https://github.com/kimberli/hubot-messenger#readme",
+  "dependencies": {
+    "facebook-chat-api": "^1.0.2",
+    "parent-require": "^1.0.0"
+  }
+}
