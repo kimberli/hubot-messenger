@@ -14,10 +14,8 @@ class MessengerBot extends Adapter
   send: (envelope, strings...) ->
     @robot.logger.info "send"
     for str in strings
-      # console.log "Sending to #{envelope.room}: #{str}"
       console.log envelope, str
-
-      @client.sendMessage str, envelope.thread
+      @client.sendMessage str, envelope.room
 
   reply: (envelope, strings...) ->
     @robot.logger.info "reply"
@@ -38,18 +36,21 @@ class MessengerBot extends Adapter
     }, (err, api) ->
         if err
             self.robot.logger.info 'Error: ' + err
-        api.setOptions listenEvents: true
-        self.client = api
-        api.listen (err, msg) =>
-          if err
-            self.robot.logger.info 'Error: ' + err
-          else if msg.type == 'message'
-            self.robot.logger.info "Received raw message (text: #{msg.body})"
-            sender = self.robot.brain.userForId msg.threadID,
-              name: msg.senderID
-              thread: msg.threadID
-            self.robot.receive new TextMessage(sender, msg.body)
-          return
+        else
+          api.setOptions listenEvents: true
+          self.client = api
+          api.listen (err, msg) =>
+            if err
+              self.robot.logger.info 'Error: ' + err
+            else if msg.type == 'message'
+              self.robot.logger.info "Received message '#{msg.body}' from #{msg.senderID}"
+              sender = self.robot.brain.userForId msg.senderID,
+                name: msg.senderName
+                id: msg.senderID
+                room: msg.threadID
+              tmsg = new TextMessage(sender, msg.body)
+              self.receive tmsg
+            return
         return
 
 exports.use = (robot) ->
