@@ -1,7 +1,7 @@
 # hubot-messenger-adapter
-v 1.0.0
+v 1.1.0
 
-A hubot adapter for Facebook messenger! Right now it's not working though.
+A hubot adapter for Facebook messenger! 
 
 Set envvars `HUBOT_FB_USERNAME` and `HUBOT_FB_PASSWORD` to use this with an account.
 
