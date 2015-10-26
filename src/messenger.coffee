@@ -9,15 +9,11 @@ login = require('facebook-chat-api')
 class MessengerBot extends Adapter
 
   send: (envelope, strings...) ->
-    @robot.logger.info "send"
     for str in strings
-      console.log envelope, str
       @client.sendMessage str, envelope.room
 
   reply: (envelope, strings...) ->
-    @robot.logger.info "reply"
     for str in strings
-      console.log envelope, str
       @send envelope, str
 
   run: ->
