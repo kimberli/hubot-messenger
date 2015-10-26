@@ -1,5 +1,5 @@
 # hubot-messenger-adapter
-v 1.1.0
+[![npm version](https://badge.fury.io/js/hubot-messenger.svg)](https://badge.fury.io/js/hubot-messenger)
 
 A hubot adapter for Facebook messenger! 
 
