@@ -4,7 +4,7 @@
 
 A hubot adapter for Facebook messenger! 
 
-Set envvars `HUBOT_FB_USERNAME` and `HUBOT_FB_PASSWORD` to use this with an account.
+Set envvars `HUBOT_FB_USERNAME` and `HUBOT_FB_PASSWORD` to use this with a Facebook account.
 
 Install `hubot`. Make sure to `npm install --save hubot-messenger` to add this module. 
 
