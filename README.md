@@ -1,5 +1,7 @@
 # hubot-messenger-adapter
 
+EDIT: unmaintained, you can use something like https://github.com/chen-ye/hubot-fb which uses the new Messenger API 👻
+
 [![npm version](https://badge.fury.io/js/hubot-messenger.svg)](https://badge.fury.io/js/hubot-messenger)
 
 A hubot adapter for Facebook messenger! 
